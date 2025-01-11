@@ -1,5 +1,8 @@
 /* style.css */
 /* General Styles */
+
+/* Default Styles (For Desktop View) */
+
 html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -395,4 +398,56 @@ section.in-view {
     transform: translateY(0);
     visibility: visible;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Tablet View (Width between 768px and 1024px) */
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    /* Adjust styles for tablet */
+    body {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Two-column grid */
+    }
+}
+
+/* Mobile View (Width below 768px) */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr; /* Single-column layout */
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+}
+
+/* Small Mobile (Width below 480px) */
+@media screen and (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    .footer {
+        font-size: 0.85rem;
+    }
 }

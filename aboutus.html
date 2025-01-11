@@ -47,24 +47,29 @@
     
     <!-- animation script -->
     <script>
-        const sections = document.querySelectorAll("section");
-    
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("in-view");
-                    }
-                });
-            },
-            {
-                threshold: 0.2,
-            }
-        );
-    
-        sections.forEach((section) => {
-            observer.observe(section);
-        });
+       if (!window.intersectionObserverInitialized) {
+    window.intersectionObserverInitialized = true;
+
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                }
+            });
+        },
+        {
+            threshold: 0.2,
+        }
+    );
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+}
+
     </script>
 
 <script>
@@ -91,5 +96,28 @@
     // Observe each animated element
     animatedElements.forEach((el) => observer.observe(el));
 </script>
+
+<script>
+    // Detect device type and load the appropriate CSS file
+    document.addEventListener("DOMContentLoaded", () => {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+
+        if (window.innerWidth <= 480) {
+            // Small mobile
+            link.href = "mobile.css";
+        } else if (window.innerWidth <= 768) {
+            // Tablet
+            link.href = "tablet.css";
+        } else {
+            // Desktop
+            link.href = "desktop.css";
+        }
+
+        document.head.appendChild(link);
+    });
+</script>
+
 </body>
 </html>
