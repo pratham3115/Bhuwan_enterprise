@@ -34,6 +34,7 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+
 /* Header */
 header {
     background: white;
@@ -422,8 +423,10 @@ section.in-view {
 @media screen and (max-width: 768px) {
     /* Adjust styles for smaller screens */
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        box-sizing: content-box;
+        
     }
 
     .product-list {
