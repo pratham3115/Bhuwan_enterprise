@@ -23,7 +23,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 30px;
 }
 
 /* Navbar */
@@ -32,7 +32,7 @@ header h1 {
     justify-content: center;
     background-color: #444;
     position: fixed;
-    top: 70px;
+    top: 68px;
     left: 0;
     width: 100%;
     z-index: 999;
@@ -102,19 +102,6 @@ header h1 {
     width: 100%;
 }
 
-.product-item .product-link {
-    background-color: #007BFF;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.product-item .product-link:hover {
-    background-color: #0056b3;
-}
-
 /* View More Button */
 .view-more {
     display: inline-block;
@@ -136,9 +123,10 @@ header h1 {
     background-color: #333;
     color: white;
     padding: 10px;
-    position: fixed;
-    width: 100%;
+    position: relative;
     bottom: 0;
+    width: 100%;
+    clear: both;
 }
 
 .footer .social-links a {
@@ -149,6 +137,17 @@ header h1 {
 
 .footer .social-links a:hover {
     text-decoration: underline;
+}
+
+/* Ensure footer is at the bottom only when the content is short */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 /* Responsive Design */
