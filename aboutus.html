@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Bhuwan Enterprise</h1>
+        <a href="index.html" style="text-decoration: none; color: inherit;"><h1>Bhuwan Enterprise</h1></a>
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
@@ -16,19 +16,80 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
+    <pre>
 
-    <section class="about-section">
+
+        
+    </pre>
+
+    <section class="about-section animate">
         <h2>About Us</h2>
-        <p>With over 17 years of experience, Bhuwan Enterprise provides reliable warp knitting machinery solutions tailored to your needs.</p>
-        <p>We offer high-performance machines and expert support, ensuring the highest quality, reliability, and customer satisfaction. Our solutions are designed to meet the diverse needs of our clients.</p>
+        <p>Welcome to Bhuwan Enterprise, your trusted partner in warp knitting machinery solutions. With over 17 years of experience in the industry, we have established ourselves as a reliable and innovative provider of high-performance warp knitting machines tailored to meet the diverse needs of our clients.</p>
+
+<p>At Bhuwan Enterprise, we are committed to delivering the highest quality products and services. Our team of experts works tirelessly to ensure that our machines are not only efficient and reliable but also incorporate the latest technological advancements. We understand the importance of precision and consistency in the textile industry, and our solutions are designed to help you achieve just that.</p>
+
+<p>Our mission is to provide our clients with the best possible support and expertise, ensuring their success and satisfaction. We believe in building long-term relationships with our clients, based on trust, integrity, and mutual respect. Whether you are a small business or a large enterprise, we are here to help you navigate the complexities of warp knitting and achieve your goals.</p>
+
+<p>Thank you for choosing Bhuwan Enterprise as your warp knitting solutions provider. We look forward to working with you and helping you succeed in your endeavors.</p>
+
+
+        
     </section>
 
-    <footer class="footer">
+    <footer class="footer ">
         <p>&copy; 2025 Bhuwan Enterprise. All rights reserved.</p>
         <div class="social-links">
             <a href="https://facebook.com/BhuwanEnterprise" target="_blank">Facebook</a>
             <a href="https://linkedin.com/company/BhuwanEnterprise" target="_blank">LinkedIn</a>
         </div>
     </footer>
+
+    
+    <!-- animation script -->
+    <script>
+        const sections = document.querySelectorAll("section");
+    
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                    }
+                });
+            },
+            {
+                threshold: 0.2,
+            }
+        );
+    
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+
+<script>
+    // Select all elements with the 'animate' class
+    const animatedElements = document.querySelectorAll('.animate');
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Add 'in-view' class when the element enters the viewport
+                    entry.target.classList.add('in-view');
+                    // Stop observing the element after the animation triggers
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.2, // Trigger when 20% of the element is visible
+        }
+    );
+
+    // Observe each animated element
+    animatedElements.forEach((el) => observer.observe(el));
+</script>
 </body>
 </html>
