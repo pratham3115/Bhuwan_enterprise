@@ -5,6 +5,10 @@ html, body {
     padding: 0;
     line-height: 1.6;
     height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    
+    
 }
 
 header {
@@ -23,7 +27,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 /* Navbar */
@@ -32,7 +36,7 @@ header h1 {
     justify-content: center;
     background-color: #444;
     position: fixed;
-    top: 68px;
+    top: 70px;
     left: 0;
     width: 100%;
     z-index: 999;
@@ -81,6 +85,11 @@ header h1 {
 .products-preview {
     padding: 40px;
     margin-top: 20px;
+}
+
+/* Content Margin Adjustment */
+main {
+    margin-top: 5px; /* Create space for fixed header + navbar */
 }
 
 .product-list {
@@ -148,6 +157,21 @@ body {
 
 main {
     flex: 1;
+}
+
+/* Products Page - Avoid Navbar Overlap */
+.products-section {
+    margin-top: 120px; /* Space to prevent overlap with fixed navbar */
+}
+
+/* About Us Page - Avoid Navbar Overlap */
+.about-section {
+    margin-top: 120px; /* Space to prevent overlap with fixed navbar */
+}
+
+/* Contact Page - Avoid Navbar Overlap */
+.contact-section {
+    margin-top: 120px; /* Space to prevent overlap with fixed navbar */
 }
 
 /* Responsive Design */
