@@ -1,43 +1,25 @@
 /* General Styles */
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Header */
-header {
-    background: white;
-    color: black;
-    padding: 1rem;
-    text-align: center;
+
+.content {
+    flex: 1;
+    padding-bottom: 50px; /* Adds space at the bottom before the footer */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
 
-.navbar a {
-    color: black;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: #00bcd4;
-}
 
 /* Contact Section */
 .contact-section {

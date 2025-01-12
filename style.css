@@ -25,7 +25,35 @@ body {
     min-height: 100vh;
     background-color: #f4f4f4; /* Soft background */
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    
 }
+
+.about-section{
+    padding-left: 10px;
+    align-items: center;
+}
+
+/* Logo Styling */
+header a {
+    display: flex;
+    align-items: center; /* Align logo and text vertically */
+    gap: 10px; /* Space between the logo and the text */
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    width: 90px; /* Adjust the size of the logo */
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+header h1 {
+    font-size: 1.5rem; /* Adjust size of the text */
+    margin: 0; /* Remove any margin around the text */
+    color: black; /* Ensure consistency in color */
+}
+
 
 /* Ensures the main content section grows to take up available space */
 .content {
@@ -88,6 +116,14 @@ header h1 {
     transform: scale(1.05);
 }
 
+/* Active Link Styling */
+.navbar a.active {
+    background-color: #3498db;
+    color: white;
+    border-radius: 15px;
+    height: 22px;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -110,6 +146,8 @@ header h1 {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
+
+
 
 .cta-button {
     background-color: #007BFF;
@@ -140,6 +178,8 @@ header h1 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 20px;
+    text-align: center;
+    
 }
 
 .product-list {
@@ -147,6 +187,7 @@ header h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px 0;
+    
 }
 
 .product-item {
@@ -173,6 +214,13 @@ header h1 {
 .product-item:hover img {
     transform: scale(1.05);
 }
+
+.product-details {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
 
 /* View More Button */
 .view-more {
@@ -453,4 +501,9 @@ section.in-view {
     .footer {
         font-size: 0.85rem;
     }
+}
+
+
+.logo{
+    border-radius: 50%;
 }
