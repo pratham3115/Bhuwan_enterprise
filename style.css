@@ -1,8 +1,6 @@
-/* style.css */
 /* General Styles */
 
 /* Default Styles (For Desktop View) */
-
 html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -14,7 +12,9 @@ html, body {
     overflow-y: auto;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
-
+.spaceinmobile{
+   display: none;
+}
 html {
     scroll-behavior: smooth; /* Smooth scrolling effect */
 }
@@ -25,12 +25,6 @@ body {
     min-height: 100vh;
     background-color: #f4f4f4; /* Soft background */
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    
-}
-
-.about-section{
-    padding-left: 10px;
-    align-items: center;
 }
 
 /* Logo Styling */
@@ -45,15 +39,15 @@ header a {
 .logo {
     width: 90px; /* Adjust the size of the logo */
     height: auto;
-    border-radius: 5px; /* Optional: Add rounded corners */
+   
 }
 
 header h1 {
-    font-size: 1.5rem; /* Adjust size of the text */
+    font-size: 1.6rem; /* Adjust size of the text */
     margin: 0; /* Remove any margin around the text */
-    color: black; /* Ensure consistency in color */
+    color: white; /* Ensure consistency in color */
+    
 }
-
 
 /* Ensures the main content section grows to take up available space */
 .content {
@@ -62,11 +56,10 @@ header h1 {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-
 /* Header */
 header {
-    background: white;
-    color: black;
+    background: black;
+    color: white;
     padding: 0px 20px;
     position: fixed;
     top: 0;
@@ -76,54 +69,55 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-align:center;
+    text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-}
-
-/* Header Text */
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 700;
 }
 
 /* Navbar */
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: white;
-    top: px;
+    background-color: black;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    flex-wrap: wrap; /* Allow links to wrap if necessary */
 }
 
 .navbar a {
-    padding: 0px 20px;
+    padding: 15px 20px;
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
 
 .navbar a:hover {
-    background-color: #f1f1f1;
-    color: #3498db;
+    background-color: lightgoldenrodyellow;
+    color: black;
     transform: scale(1.05);
+    border-radius: 15px;
+    height: 25px;
+    width: auto;
 }
 
 /* Active Link Styling */
 .navbar a.active {
-    background-color: #3498db;
+    background-color: grey;
     color: white;
     border-radius: 15px;
-    height: 22px;
 }
 
+.about-section{
+    align-items: center ;
+    padding-left: 5px;
+    padding-right: 2px;
+}
 /* Hero Section */
 .hero {
     display: flex;
@@ -146,8 +140,6 @@ header h1 {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
-
-
 
 .cta-button {
     background-color: #007BFF;
@@ -179,7 +171,6 @@ header h1 {
     font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
-    
 }
 
 .product-list {
@@ -187,7 +178,6 @@ header h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px 0;
-    
 }
 
 .product-item {
@@ -220,7 +210,6 @@ header h1 {
     visibility: visible !important;
     display: block !important;
 }
-
 
 /* View More Button */
 .view-more {
@@ -283,227 +272,121 @@ main {
     flex: 1;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-    .hero {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    .navbar {
-        flex-direction: row;
-        justify-content: space-around;
+/* Specific Media Query for Mobile Devices (Below 400px) */
+@media screen and (max-width: 600px) {
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .navbar a {
-        padding: 15px 25px;
+    .spaceinmobile{
+        display: inline;
     }
 
-    .product-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .hero-text h2 {
-        font-size: 3rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    /* Adjust layout for smaller screens */
-    .hero {
-        padding: 30px 20px;
-    }
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar a {
-        padding: 15px 25px;
-    }
-
-    .product-item img {
-        max-width: 100%;
-    }
-
-    .hero-text h2 {
-        font-size: 2rem;
-    }
-
-    .cta-button {
-        font-size: 1rem;
-        padding: 12px 25px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .hero-text h2 {
-        font-size: 1.5rem;
-    }
-
-    .cta-button {
-        font-size: 1rem;
-        padding: 12px 20px;
-    }
-
-    .navbar a {
+    /* Header */
+    header {
+        display: flex;
+        flex-direction: column; /* Stack logo and navbar vertically */
         padding: 10px 20px;
-    }
-}
-
-/* animation css */
-/* Navbar Hover Animation */
-.navbar a {
-    padding: 15px 25px;
-    text-decoration: none;
-    color: black;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
-}
-
-.navbar a:hover {
-    background-color: #f1f1f1;
-    color: #3498db; /* Transition to blue on hover */
-}
-
-/* Hero Section Animation */
-.hero {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 140px;
-    background: linear-gradient(to right, #2c3e50, #3498db);
-    color: white;
-    animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Product Card Hover Animation */
-.product-item {
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow */
-}
-
-.product-item:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-}
-
-/* Button Hover Animation */
-.cta-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
-}
-
-.cta-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px); /* Lift effect */
-}
-
-/* Scroll Animation */
-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-section.in-view {
-    opacity: 3;
-    transform: translateY(0);
-}
-
-
-/* Animation Setup */
-.animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: none; /* Avoid conflicts with IntersectionObserver */
-    visibility: hidden; /* Prevent visibility before animation */
-}
-
-/* When in view, trigger animation */
-.animate.in-view {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* Tablet View (Width between 768px and 1024px) */
-
-@media screen and (max-width: 1024px) and (min-width: 768px) {
-    /* Adjust styles for tablet */
-    body {
-        font-size: 1rem;
+         
     }
 
+    /* Logo and Name Container */
+    .logo-container {
+        display: flex;
+        align-items: center; /* Keep logo and text in line */
+        gap: 10px; /* Space between logo and name */
+        justify-content: center; /* Center the logo and name */
+    }
+
+    .logo-container img {
+        height: 40px; /* Adjust logo size for mobile */
+    }
+
+    .logo-container h1 {
+        font-size: 1.2rem;
+        margin: 0;
+        color: white;
+    }
+
+    /* Navbar - Horizontal strip layout */
     .navbar {
-        flex-direction: row;
-        justify-content: space-around;
+        display: flex;
+        justify-content: center;
+        flex-direction: row; /* Keep navbar links horizontally */
+        gap: 10px;
+        width: 100%; /* Ensure navbar takes full width */
+        margin-top: 10px;
     }
 
-    .product-list {
-        grid-template-columns: repeat(2, 1fr); /* Two-column grid */
-    }
-}
-
-/* Mobile View (Width below 768px) */
-@media screen and (max-width: 768px) {
-    /* Adjust styles for smaller screens */
-    .navbar {
-        flex-direction: row;
-        align-items: center;
-        box-sizing: content-box;
-        
-    }
-
-    .product-list {
-        grid-template-columns: 1fr; /* Single-column layout */
-    }
-
-    .cta-button {
-        font-size: 1rem;
-        padding: 12px 15px;
-    }
-}
-
-/* Small Mobile (Width below 480px) */
-@media screen and (max-width: 480px) {
-    .hero-text h2 {
-        font-size: 1.5rem;
-    }
-
-    .cta-button {
+    .navbar a {
+        padding: 0px 5px;
+        text-decoration: none;
+        color: white;
         font-size: 0.9rem;
-        padding: 8px 10px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 5px; /* Rounded corners for links */
     }
 
-    .footer {
-        font-size: 0.85rem;
+    .navbar a:hover {
+        background-color: #f1f1f1;
+        color: #3498db;
     }
-}
 
+    .navbar a.active {
+        background-color: gray;
+        color: white;
+    }
 
-.logo{
-    border-radius: 50%;
+    /* Products Section Adjustments */
+    .products-preview {
+        padding: 40px 10px; /* Adjust padding */
+    }
+
+    .product-list {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack product items vertically */
+        gap: 15px;
+    }
+
+    .product-item {
+        padding: 15px;
+    }
+
+    .view-more {
+        padding: 10px 15px; /* Adjust button size */
+    }
+
+     /* Hero Section Adjustments */
+     .hero {
+        padding: 60px 15px; /* Reduce padding for smaller screens */
+        margin-top: 50px; /* Adjust for fixed navbar */
+    }
+
+    .hero img {
+        object-fit: cover; /* Ensures image still covers the area */
+        width: 100%; /* Full width on mobile */
+        height: 100%; /* Make image fill the height */
+    }
+
+    .hero-text h2 {
+        font-size: 1.8rem; /* Smaller font size for mobile */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .about-section{
+        align-items: center;
+        padding-left: 5px;
+        padding-right: 2px;
+    }
+
+  
 }
